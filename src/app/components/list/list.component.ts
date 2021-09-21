@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from './../../services/project.service';
 import { Project } from '../../model/project';
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -21,7 +22,24 @@ export class ListComponent implements OnInit {
   getProjects(){
     // this.projects.push(this.projectService.getProjects());
     this.projects! = this.projectService.getProjects();
-    console.log('projectsss' + this.projects);
+  }
+
+  saveProject(projectName: string, description: string, manager: string, assignedTo: string, projectStatus: string, creationDate: string){
+      const newProject: Project = {
+        projectName: projectName,
+        description: description,
+        manager: manager,
+        assignedTo: assignedTo,
+        projectStatus: projectStatus,
+        creationDate: creationDate
+		}
+		localStorage.setItem('editProject', JSON.stringify(newProject));
+    console.log("edit" + JSON.stringify(newProject));
+	}
+
+  deleteProject(projectName: string){
+    this.projectService.projectDelete(projectName);
+    this.getProjects();
   }
 
 }

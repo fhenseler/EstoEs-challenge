@@ -8,14 +8,14 @@ export class ProjectService {
 
 	constructor() { }
 
-	public projectRegister(projectName: string, description: string, manager: string, assignedTo: string, projectStatus: string) {
+	public projectRegister(projectName: string, description: string, manager: string, assignedTo: string, projectStatus: string, creationDate: string) {
 		const newProject: Project = {
 			projectName: projectName,
 			description: description,
 			manager: manager,
 			assignedTo: assignedTo,
 			projectStatus: projectStatus,
-			creationDate: new Date().toLocaleString()
+			creationDate: creationDate ? creationDate : new Date().toLocaleString()
 		};
 		// Get the existing data
 		let existing: any[] = [];
@@ -31,12 +31,25 @@ export class ProjectService {
 
 		// Save back to localStorage
 		localStorage.setItem('projects', JSON.stringify(existing));
+		console.log(JSON.stringify(existing));
 		// localStorage.setItem('projects', existing);
+	}
+
+	public projectDelete(projectName: string){
+		let projects: any = [];
+		projects = this.getProjects();
+		const filtered = projects.filter((project: any) => project.projectName !== projectName);
+		console.log("filtered" + JSON.stringify(filtered));
+		localStorage.setItem('projects', JSON.stringify(filtered));
 	}
 
 	public getProjects(){
 		var retrievedObject = localStorage.getItem('projects');
-		console.log('retrievedObject: ', retrievedObject);
+		return JSON.parse(retrievedObject!);
+	}
+
+	public getProject(){
+		var retrievedObject = localStorage.getItem('editProject');
 		return JSON.parse(retrievedObject!);
 	}
 }

@@ -35,7 +35,10 @@
                         </div>
                       </div> -->
 
-                      <div type="submit" style="float:right;" routerLink="/edit"><i class="fas fa-ellipsis-v"></i></div>
+                      <button type="submit" class="btn btn-danger" style="float:right;" (click)="this.deleteProject(project.projectName)">Delete
+                      </button>
+                      <button type="submit" class="btn btn-primary" style="float:right;" (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)"routerLink="/edit">Edit
+                      </button>
                   </div>
                 </div>
 

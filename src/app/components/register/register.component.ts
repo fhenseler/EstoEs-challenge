@@ -51,7 +51,8 @@ export class RegisterComponent implements OnInit {
 			const manager: string = this.form.get('manager')!.value;
 			const assignedTo: string = this.form.get('assignedTo')!.value;
 			const projectStatus: string = this.form.get('projectStatus')!.value;
-			this.projectService.projectRegister(projectName, description, manager, assignedTo, projectStatus);
+			const creationDate: string = "";
+			this.projectService.projectRegister(projectName, description, manager, assignedTo, projectStatus, creationDate);
 			this.success = true;
 		}
 	}	
