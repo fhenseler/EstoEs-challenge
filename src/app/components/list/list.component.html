@@ -16,11 +16,26 @@
                   </div>
                   <div class="card-header">
                   </div>
-                  <article class="card-body">
+                  <div class="card-body" *ngFor="let project of projects">
                     <!-- RETRIEVED PROJECTS DATA.// -->
-                    TEXT PLACEHOLDER
-                  </article>
-                  <div class="card-footer">
-                </div>
+                    <div>
+                        {{ project.projectName }}
+                        {{ project.assignedTo }}
+                        &nbsp;
+                        Creation Date: {{ project.creationDate }}
+                    </div>
+                      <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div> -->
+
+                      <div type="submit" style="float:right;" routerLink="/edit"><i class="fas fa-ellipsis-v"></i></div>
+                  </div>
                 </div>
 

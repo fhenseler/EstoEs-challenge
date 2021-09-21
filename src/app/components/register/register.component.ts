@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProjectService } from './../../services/project.service';
 import { Router } from '@angular/router';
+import { Project } from '../../model/project';
 
 @Component({
   selector: 'app-register',
@@ -20,15 +21,6 @@ export class RegisterComponent implements OnInit {
 	selectedStatus = 'Enabled';
 	managers = ['Walt Cosani', 'Federico Henseler'];
 	employees = ['Jane Doe', 'John Doe'];
-	// public testProject: Object = {
-	// 	projectName: 'Landing Page',
-	// 	description: 'Test Project',
-	// 	manager: 'Walt Cosani',
-	// 	assignedTo: 'Ignacio Truffa',
-	// 	projectStatus: 'Enabled'
-	// };
-	// projects = [];
-
 
   	constructor(public formBuilder: FormBuilder, public projectService: ProjectService, private router: Router) {
   		this.resetForm();
