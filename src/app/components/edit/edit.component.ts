@@ -4,11 +4,11 @@ import { ProjectService } from './../../services/project.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class EditComponent implements OnInit {
 
 	public form!: FormGroup;
 
@@ -51,17 +51,8 @@ export class RegisterComponent implements OnInit {
   		});
 	}
 
-	public tryRegister(){
+	public tryEdit(){
 
-		if (this.form.valid) {
-			const projectName: string = this.form.get('projectName')!.value;
-			const description: string = this.form.get('description')!.value;
-			const manager: string = this.form.get('manager')!.value;
-			const assignedTo: string = this.form.get('assignedTo')!.value;
-			const projectStatus: string = this.form.get('projectStatus')!.value;
-			this.projectService.projectRegister(projectName, description, manager, assignedTo, projectStatus);
-			this.success = true;
-		}
 	}	
 
 }
