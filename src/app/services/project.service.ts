@@ -20,7 +20,6 @@ export class ProjectService {
 		// Get the existing data
 		let existing: any[] = [];
 		existing = this.getProjects();
-		// var existing: any = localStorage.getItem('projects');
 
 		// If no existing data, create an array
 		// Otherwise, convert the localStorage string to an array
@@ -31,8 +30,6 @@ export class ProjectService {
 
 		// Save back to localStorage
 		localStorage.setItem('projects', JSON.stringify(existing));
-		console.log(JSON.stringify(existing));
-		// localStorage.setItem('projects', existing);
 	}
 
 	public projectDelete(projectName: string){

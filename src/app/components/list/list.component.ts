@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   }
 
   getProjects(){
-    // this.projects.push(this.projectService.getProjects());
     this.projects! = this.projectService.getProjects();
   }
 
@@ -34,7 +33,6 @@ export class ListComponent implements OnInit {
         creationDate: creationDate
 		}
 		localStorage.setItem('editProject', JSON.stringify(newProject));
-    console.log("edit" + JSON.stringify(newProject));
 	}
 
   deleteProject(projectName: string){
