@@ -28,7 +28,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/fontawesome/css/all.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -101,7 +100,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/fontawesome/css/all.css",
               "src/styles.css"
             ],
             "scripts": []
