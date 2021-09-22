@@ -9,10 +9,19 @@
                     <img src="../../../assets/logo.png">
                   </div>
                   <div class="card-header">
+                    <div class="row">
+                      <div class="col-md">
                     <b>My Projects</b>
+                  </div>
+                  <div class="col-sm">
                       <button type="submit" class="btn btn-danger" style="float:right;" routerLink="/register">
                         <strong><b>+</b>Add project</strong>
                       </button>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="card-footer">
                   </div>
 
                   <div class="card-body" *ngFor="let project of projects">
@@ -23,13 +32,25 @@
                         <br>
                         <img src="../../../assets/img_avatar.png" class="avatar"> 
                         {{ project.assignedTo }}
+                        
+                        <button type="submit" class="btn btn-danger" (click)="this.deleteProject(project.projectName)">Delete
+                        </button>
+                        <button type="submit" class="btn btn-primary" (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)"routerLink="/edit">Edit
+                        </button>
+                        <mat-icon>more_vert</mat-icon>
+
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <mat-icon>more_vert</mat-icon>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
                     </div>
 
-                      <button type="submit" class="btn btn-danger" (click)="this.deleteProject(project.projectName)">Delete
-                      </button>
-                      <button type="submit" class="btn btn-primary" (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)"routerLink="/edit">Edit
-                      </button>
-                      
                   </div>
                   <div class="card-footer">
                   </div>
