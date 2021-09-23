@@ -1,15 +1,22 @@
 .card{
-    width: 35rem;
+    width: 25rem;
 }
 
 #card2{
-    width: 25rem !important;
+    width: 15rem !important;
     height: 10rem !important;
 }
 
-.form-group{
-    margin-top: 10px;
+.card-body{
+    width: 100% !important;
+    padding: 0 !important;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
 }
+
+/* .form-group{
+    margin-top: 10px;
+} */
 
 .alert{
     width: 25rem;
@@ -56,6 +63,9 @@ img {
 
 mat-icon{
     cursor: pointer;
+}
+
+#icon1{
     float: right;
 }
 

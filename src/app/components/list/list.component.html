@@ -29,6 +29,7 @@
                       </div>
                       </form>
                   </div> -->
+                  <div class="card-header"></div>
 
                   <div class="card-body" *ngFor="let project of projects">
                    <div class="container">
@@ -43,7 +44,7 @@
                               </div>
 
                             <div class="col-4">
-                                <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                                <mat-icon id="icon1" [matMenuTriggerFor]="menu">more_vert</mat-icon>
                               <mat-menu #menu="matMenu">
                                 <button mat-menu-item (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)" routerLink="/edit">
                                   <mat-icon >edit</mat-icon>
