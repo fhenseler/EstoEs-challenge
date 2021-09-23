@@ -21,14 +21,14 @@
                     </div>
                   </div>
 
-                  <div class="card-header">
+                  <!-- <div class="card-header">
                       <form>
                         <div class="row align-items-center justify-content-center">
                         <input class="form-control" type="text" placeholder="Search">
                         <button class="btn btn-secondary" type="submit" id="btn2">Search</button>
                       </div>
                       </form>
-                  </div>
+                  </div> -->
 
                   <div class="card-body" *ngFor="let project of projects">
                    <div class="container">
@@ -49,8 +49,8 @@
                                   <mat-icon >edit</mat-icon>
                                   <span>Edit</span>
                                 </button>
-                                <!-- (click)="this.deleteProject(project.projectName)" -->
-                                <button mat-menu-item (click)="this.openModal()">
+                                <!-- this.openModal() -->
+                                <button mat-menu-item (click)="this.deleteProject(project.projectName)">
                                   <mat-icon>delete</mat-icon>
                                   <span>Delete</span>
                                 </button>
@@ -69,7 +69,8 @@
 
                 </div>
               </div>
-              <div>
+
+              <!-- <div>
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
                     <a class="page-link" href="#">&laquo;</a>
@@ -87,10 +88,11 @@
                     <a class="page-link" href="#">&raquo;</a>
                   </li>
                 </ul>
-              </div>
+              </div> -->
+
               <div class="card-footer"></div>
 
-              <ng-template #delete let-modal class="card mb-3">
+              <!-- <ng-template #delete let-modal class="card mb-3">
                 <div class="container">
                     <div class="modal-header">
                         <h5 class="modal-title">
@@ -107,7 +109,7 @@
                     </div>
                     <div class="modal-footer"></div>
                 </div>
-        </ng-template>
+        </ng-template> -->
 
 
                 
