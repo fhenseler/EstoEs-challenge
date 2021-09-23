@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 
 import { ProjectService } from './../../services/project.service';
 import { Project } from '../../model/project';
 
-
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-list',
@@ -13,9 +12,11 @@ import { Project } from '../../model/project';
 })
 export class ListComponent implements OnInit {
 
+  @ViewChild('delete',{static: true}) delete!: ElementRef;
   projects: any[] = [];
+  public modalReference: any = null;
 
-  constructor(public projectService: ProjectService,) {}
+  constructor(public projectService: ProjectService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.getProjects();
@@ -40,6 +41,15 @@ export class ListComponent implements OnInit {
   deleteProject(projectName: string){
     this.projectService.projectDelete(projectName);
     this.getProjects();
+  }
+
+  public openModal(){
+    this.modalReference = this.modalService.open(this.delete);
+    console.log(this.projectService.getProject());
+  }
+
+  public closeModal(){
+  	this.modalReference.close();
   }
 
 }

@@ -16,9 +16,6 @@ export class RegisterComponent implements OnInit {
 	errorMessage: string;
 	error: boolean;
 	success: boolean;
-	selectedManager = 'Select a person';
-	selectedAssigned = 'Select a person';
-	selectedStatus = 'Enabled';
 	managers = ['Walt Cosani', 'Federico Henseler'];
 	employees = ['Jane Doe', 'John Doe'];
 

@@ -2,9 +2,9 @@
     width: 35rem;
 }
 
-.btn{
-    margin: auto;
-    float: right;
+#card2{
+    width: 25rem !important;
+    height: 10rem !important;
 }
 
 .form-group{
@@ -18,6 +18,7 @@
 #btn1{
     float: right;
     margin: 0px !important;
+    max-width: 15rem !important;
 }
 
 i{
@@ -40,11 +41,21 @@ img {
     margin: auto;
   }
 
+.form-control{
+    max-width: 15rem;
+}
+
 .col{
     margin: auto;
 }
 
-mat-icon{
+#btn2{
     float: right;
-    cursor: pointer;
+    max-width: 7rem;
 }
+
+mat-icon{
+    cursor: pointer;
+    float: right;
+}
+
