@@ -9,6 +9,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    BrowserAnimationsModule
   ],
   exports: [
     FormsModule, 

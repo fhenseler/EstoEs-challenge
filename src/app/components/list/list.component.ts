@@ -4,6 +4,8 @@ import { ProjectService } from './../../services/project.service';
 import { Project } from '../../model/project';
 
 
+
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',

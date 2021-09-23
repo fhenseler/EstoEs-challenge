@@ -3,7 +3,7 @@
 }
 
 .btn{
-    margin-top: 10px;
+    margin: auto;
     float: right;
 }
 
@@ -25,6 +25,26 @@ i{
 }
 
 img {
-    border-radius: 50%;
-    max-height: 50px;
+    border-radius: 50% !important;
+    max-height: 70px;
+    max-width: 70px;
+    object-fit: contain;
+    float: left;
+    display: block;
+}
+
+.row {
+    display: flex;
+    vertical-align: middle;
+    align-content: center;
+    margin: auto;
+  }
+
+.col{
+    margin: auto;
+}
+
+mat-icon{
+    float: right;
+    cursor: pointer;
 }

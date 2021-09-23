@@ -10,47 +10,54 @@
                   </div>
                   <div class="card-header">
                     <div class="row">
-                      <div class="col-md">
+                      <div class="col">
                     <b>My Projects</b>
                   </div>
-                  <div class="col-sm">
+                  <div class="col">
                       <button type="submit" class="btn btn-danger" style="float:right;" routerLink="/register">
-                        <strong><b>+</b>Add project</strong>
+                        <b>+</b> Add project
                       </button>
                     </div>
                     </div>
                   </div>
 
                   <div class="card-body" *ngFor="let project of projects">
-                    <div class="container">
-                        <h6><b>{{ project.projectName }}</b></h6>
-                       <br>
-                        Creation Date: {{ project.creationDate }}
-                        <br>
-                        <img src="../../../assets/img_avatar.png" class="avatar"> 
-                        {{ project.assignedTo }}
-                        
-                        <button type="submit" class="btn btn-danger" (click)="this.deleteProject(project.projectName)">Delete
-                        </button>
-                        <button type="submit" class="btn btn-primary" (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)"routerLink="/edit">Edit
-                        </button>
+                   <div class="container">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                            <div class="row">
+                              <div class="col-8">
+                                <b class="card-title">{{ project.projectName }}</b>
+                                <br>
+                                  Creation Date: {{ project.creationDate }}
+                                <br>
+                              </div>
 
-                        <!-- <mat-icon>more_vert</mat-icon>
-
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <mat-icon>more_vert</mat-icon>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="col-4">
+                                <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                              <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)" routerLink="/edit">
+                                  <mat-icon >edit</mat-icon>
+                                  <span>Edit</span>
+                                </button>
+                                <button mat-menu-item (click)="this.deleteProject(project.projectName)">
+                                  <mat-icon>delete</mat-icon>
+                                  <span>Delete</span>
+                                </button>
+                              </mat-menu>
+                              
+                            </div>
                           </div>
-                        </div>
-                    </div> -->
-
-                  </div>
-
+                        <br>
+                      <div class="row align-items-center">
+                        <img src="../../../assets/img_avatar.png"> 
+                        {{ project.assignedTo }}
+                      </div>               
+     
+                    </li>
+                  </ul>
                 </div>
-                <div class="card-footer">
-                </div>
+              </div>
+                
+
+
