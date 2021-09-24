@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { FilterPipe } from './pipes/filter';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FilterPipe } from './pipes/filter';
     MatMenuModule,
     BrowserAnimationsModule,
     MdbModalModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   exports: [
     FormsModule, 

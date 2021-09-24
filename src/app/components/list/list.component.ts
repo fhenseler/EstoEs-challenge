@@ -19,11 +19,15 @@ export class ListComponent implements OnInit {
   public filteredProjects: any[] = [];
   public collectionSize!: number;
   public searchTerm!: string;
+  public page = 1;
+  public pageSize = 4;
+  public currentRate = 8;
 
   constructor(public projectService: ProjectService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.getProjects();
+    this.collectionSize = this.projects.length;
   }
 
   getProjects(){
