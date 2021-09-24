@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features
 
-⋅⋅* CRUD for My Projects
-⋅⋅* Search Tool
-⋅⋅* Form Validation
-⋅⋅* Angular Routing
-⋅⋅* Responsive Design 
+- CRUD for My Projects
+- Search Tool
+- Form Validation
+- Angular Routing
+- Responsive Design 
 
 
 
