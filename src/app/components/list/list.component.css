@@ -1,5 +1,5 @@
 .card{
-    width: 25rem;
+    width: 30rem;
 }
 
 #card2{
@@ -13,10 +13,6 @@
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
 }
-
-/* .form-group{
-    margin-top: 10px;
-} */
 
 .alert{
     width: 25rem;

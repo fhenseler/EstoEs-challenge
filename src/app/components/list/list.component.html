@@ -47,11 +47,11 @@
                                 <mat-icon id="icon1" [matMenuTriggerFor]="menu">more_vert</mat-icon>
                               <mat-menu #menu="matMenu">
                                 <button mat-menu-item (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)" routerLink="/edit">
-                                  <mat-icon >edit</mat-icon>
+                                  <mat-icon autofocus>edit</mat-icon>
                                   <span>Edit</span>
                                 </button>
-                                <!-- this.openModal() -->
-                                <button mat-menu-item (click)="this.deleteProject(project.projectName)">
+                                <!-- <button mat-menu-item (click)="this.deleteProject(project.projectName)"> -->
+                                  <button mat-menu-item (click)="this.openModal(); this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate);">
                                   <mat-icon>delete</mat-icon>
                                   <span>Delete</span>
                                 </button>
@@ -71,6 +71,31 @@
                 </div>
               </div>
 
+                              
+              <ng-template #delete let-modal class="card mb-3">
+                <div class="container">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <span>Delete</span>
+                        </h5>
+                        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" *ngFor="let project of projects">
+                        <div *ngIf="project.projectName === this.projectService.getProject().projectName">
+                        Delete the project {{ project.projectName }}?
+                        <button type="button" class="btn btn-danger" (click)="this.deleteProject(project.projectName); this.modalReference.close();">Yes</button>
+                        <button type="button" class="btn btn-dark" (click)="this.closeModal()">No</button>
+                    </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+        </ng-template> 
+
+
+              <div class="card-footer">
+                
               <!-- <div>
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
@@ -89,28 +114,9 @@
                     <a class="page-link" href="#">&raquo;</a>
                   </li>
                 </ul>
+              </div>
               </div> -->
 
-              <div class="card-footer"></div>
-
-              <!-- <ng-template #delete let-modal class="card mb-3">
-                <div class="container">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <span>Delete</span>
-                        </h5>
-                        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" *ngFor="let project of projects">
-                      Would you like to delete?
-                      <button type="button" class="btn btn-danger" (click)="this.deleteProject(project.projectName)">Yes</button>
-                      <button type="button" class="btn btn-dark" (click)="this.closeModal()">No</button>
-                    </div>
-                    <div class="modal-footer"></div>
-                </div>
-        </ng-template> -->
 
 
                 

@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
   @ViewChild('delete',{static: true}) delete!: ElementRef;
   projects: any[] = [];
   public modalReference: any = null;
+  public del: any;
 
   constructor(public projectService: ProjectService, private modalService: NgbModal) {}
 
@@ -45,7 +46,6 @@ export class ListComponent implements OnInit {
 
   public openModal(){
     this.modalReference = this.modalService.open(this.delete);
-    console.log(this.projectService.getProject());
   }
 
   public closeModal(){
