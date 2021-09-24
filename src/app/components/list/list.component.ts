@@ -13,9 +13,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class ListComponent implements OnInit {
 
   @ViewChild('delete',{static: true}) delete!: ElementRef;
-  projects: any[] = [];
+  public projects: any[] = [];
   public modalReference: any = null;
   public del: any;
+  public filteredProjects: any[] = [];
+  public collectionSize!: number;
+  public searchTerm!: string;
 
   constructor(public projectService: ProjectService, private modalService: NgbModal) {}
 
@@ -50,6 +53,11 @@ export class ListComponent implements OnInit {
 
   public closeModal(){
   	this.modalReference.close();
+  }
+
+  public search(value: string): void {
+    this.filteredProjects = this.projects.filter((val) => val.projectName.toLowerCase().includes(value));
+    this.collectionSize = this.projects.length;
   }
 
 }

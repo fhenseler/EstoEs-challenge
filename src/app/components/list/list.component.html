@@ -21,17 +21,19 @@
                     </div>
                   </div>
 
-                  <!-- <div class="card-header">
+                  <div class="card-header">
                       <form>
                         <div class="row align-items-center justify-content-center">
-                        <input class="form-control" type="text" placeholder="Search">
+                        <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+        (input)="search($event.target!.value)" />
                         <button class="btn btn-secondary" type="submit" id="btn2">Search</button>
                       </div>
                       </form>
-                  </div> -->
+                  </div>
+                  
                   <div class="card-header"></div>
 
-                  <div class="card-body" *ngFor="let project of projects">
+                  <div class="card-body" *ngFor="let project of projects | listFilter: searchTerm">
                    <div class="container">
                     <ul class="list-group">
                       <li class="list-group-item">
@@ -78,7 +80,7 @@
                         <h5 class="modal-title">
                             <span>Delete</span>
                         </h5>
-                        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+                        <button type="button" class="close" aria-label="Close" (click)="this.closeModal()">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

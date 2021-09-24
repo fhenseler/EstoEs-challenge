@@ -12,13 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { FilterPipe } from './pipes/filter';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     EditComponent,
-    ListComponent
+    ListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
     MatIconModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    MdbModalModule
+    MdbModalModule,
+    FormsModule
   ],
   exports: [
     FormsModule, 
