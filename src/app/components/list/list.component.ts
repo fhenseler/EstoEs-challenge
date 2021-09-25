@@ -52,7 +52,7 @@ export class ListComponent implements OnInit {
   }
 
   public openModal(){
-    this.modalReference = this.modalService.open(this.delete);
+    this.modalReference = this.modalService.open(this.delete, { size: 'sm' });
   }
 
   public closeModal(){

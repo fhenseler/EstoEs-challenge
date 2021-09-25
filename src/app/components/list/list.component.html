@@ -1,7 +1,7 @@
 
             <div class="bg">
                 <br />
-                <div class="container">
+                <div class="container" id="container1">
                   <div class="row">
             <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <div class="card mb-4">
@@ -49,6 +49,8 @@
 
                             <div class="col-4">
                                 <mat-icon id="icon1" [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                              </div>
+
                               <mat-menu #menu="matMenu">
                                 <button mat-menu-item (click)="this.saveProject(project.projectName, project.description, project.manager, project.assignedTo, project.projectStatus, project.creationDate)" routerLink="/edit">
                                   <mat-icon autofocus>edit</mat-icon>
@@ -60,7 +62,7 @@
                                 </button>
                               </mat-menu>
                               
-                            </div>
+                     
                           </div>
                         <br>
                       <div class="row align-items-center">
@@ -81,15 +83,18 @@
                         <h5 class="modal-title">
                             <span>Delete</span>
                         </h5>
-                        <button type="button" class="close" aria-label="Close" (click)="this.closeModal()">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="this.closeModal()">
                         </button>
                     </div>
                     <div class="modal-body" *ngFor="let project of projects">
                         <div *ngIf="project.projectName === this.projectService.getProject().projectName">
                         Delete the project {{ project.projectName }}?
-                        <button type="button" class="btn btn-danger" (click)="this.deleteProject(project.projectName); this.modalReference.close();">Yes</button>
-                        <button type="button" class="btn btn-dark" (click)="this.closeModal()">No</button>
+                        <div class="container">
+                          <div class="btn-holder">
+                          <button type="button" class="btn btn-dark" (click)="this.closeModal()">No</button> 
+                          <button type="button" class="btn btn-danger" (click)="this.deleteProject(project.projectName); this.modalReference.close();">Yes</button>
+                        </div>
+                      </div>
                     </div>
                     </div>
                 </div>

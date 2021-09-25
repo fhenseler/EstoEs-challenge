@@ -25,7 +25,7 @@
                       form.controls['projectName'].touched &&
                       form.controls['projectName'].invalid
                   }" required />
-                <div *ngIf="
+                <div class="invalid-feedback" *ngIf="
                     form.controls['projectName'].touched &&
                     form.controls['projectName'].invalid
                   ">
@@ -39,7 +39,7 @@
                       form.controls['description'].touched &&
                       form.controls['description'].invalid
                   }" required />
-                <div *ngIf="
+                <div class="invalid-feedback"  *ngIf="
                     form.controls['description'].touched &&
                     form.controls['description'].invalid
                   ">
